@@ -23,6 +23,7 @@ kotlin {
             isStatic = true
         }
         extraSpecAttributes["resources"] = "['src/commonMain/resources/**', 'src/iosMain/resources/**']"
+        pod("GoogleMLKit/BarcodeScanning") { version = "~> 3.2.0" }
     }
 
     sourceSets {
@@ -40,6 +41,7 @@ kotlin {
                 api("androidx.activity:activity-compose:1.6.1")
                 api("androidx.appcompat:appcompat:1.6.1")
                 api("androidx.core:core-ktx:1.9.0")
+                implementation("com.google.mlkit:barcode-scanning:17.1.0")
             }
         }
         val iosX64Main by getting
